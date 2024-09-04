@@ -43,7 +43,10 @@ public class Car {
         this.currFuel = currFuel;
     }
 
-    public void addFuel(double size) {
+    public void addFuel(double size) throws Exception {
+        if(this.currFuel + size > this.fuelSize) {
+            throw new Exception("EC0001");
+        }
         this.currFuel += size;
     }
 
