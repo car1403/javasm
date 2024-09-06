@@ -1,8 +1,9 @@
 package inherit2;
 
 public abstract class Shape {
-    protected int x;
-    protected int y;
+    private int x;
+    private int y;
+    public Shape(){}
     public Shape(int x, int y) {
         this.x = x;
         this.y = y;
@@ -11,6 +12,14 @@ public abstract class Shape {
     @Override
     public String toString() {
         return "X: " + x + ", Y: " + y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     // Abstract Method
