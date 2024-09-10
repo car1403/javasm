@@ -8,29 +8,29 @@ import java.util.List;
 
 public class CustDb implements Db<String, Cust> {
     @Override
-    public void insert(Cust cust) {
+    public void insert(Cust cust) throws Exception{
         System.out.println("Inserted: "+cust.getName());
     }
 
     @Override
-    public void update(Cust cust) {
+    public void update(Cust cust) throws Exception{
         System.out.println("Updated: "+cust.getName());
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String s) throws Exception{
         System.out.println("Deleted: "+s);
     }
 
     @Override
-    public Cust select(String s) {
+    public Cust select(String s) throws Exception{
         Cust cust = null;
         cust = new Cust(s, "ppp","이말숙");
         return cust;
     }
 
     @Override
-    public List<Cust> select() {
+    public List<Cust> select() throws Exception{
         List<Cust> custs = new ArrayList<Cust>();
         custs.add(new Cust("id01","pwd01","이말숙"));
         custs.add(new Cust("id02","pwd02","김말숙"));
@@ -39,4 +39,20 @@ public class CustDb implements Db<String, Cust> {
         custs.add(new Cust("id05","pwd05","고말숙"));
         return custs;
     }
+
+    @Override
+    public List<Cust> searchByName(String name) throws Exception {
+        List<Cust> custs = new ArrayList<Cust>();
+        custs.add(new Cust("id01","pwd01","김말숙"));
+        custs.add(new Cust("id02","pwd02","김숙자"));
+        custs.add(new Cust("id03","pwd03","김수지"));
+        custs.add(new Cust("id04","pwd04","김말자"));
+        custs.add(new Cust("id05","pwd05","김민지"));
+        return custs;
+    }
 }
+
+
+
+
+
