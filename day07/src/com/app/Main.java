@@ -4,6 +4,7 @@ import com.db.*;
 
 public class Main {
     public static void main(String[] args) {
+
         Db customerDb = new CustomerDb();
         Customer customer = new Customer("id01","pwd01","james");
         customerDb.insert(customer);
