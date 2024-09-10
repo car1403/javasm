@@ -22,6 +22,7 @@ public class Triangle extends Shape{
 
     @Override
     public double getCircum() {
-        return Math.sqrt(Math.pow(this.w,2) + Math.pow(this.h,2));
+        return (Math.sqrt(Math.pow(this.w,2) + Math.pow(this.h,2)))
+                +this.w + this.h;
     }
 }
